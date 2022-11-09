@@ -5,7 +5,7 @@ def jsonParse(def json) {
 pipeline {
     agent any
     stages {
-        stage("Paso 1: Compilar y probar webhook"){
+        stage("Paso 1: Compilar y probar webhook por segunda vez"){
             steps {
                 script {
                 sh "echo 'Compile Code!'"
