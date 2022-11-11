@@ -21,8 +21,11 @@ pipeline {
         }
         stage('Step 3') {
             steps {
-                echo 'Step 3'
-                sh "ps -aux"
+                echo 'Test sonar 3'
+                sh "mvn sonar:sonar \
+                    -Dsonar.projectKey=test-maven \
+                    -Dsonar.host.url=http://localhost:8084 \
+                    -Dsonar.login=2780c61dc2947718dcba435f8210a0bfbac94f26"
             }
         }
         stage('Step 4') {
