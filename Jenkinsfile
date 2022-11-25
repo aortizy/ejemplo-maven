@@ -25,10 +25,10 @@ pipeline {
             }
             post{
 				success{
-					slackSend color: 'good', channel: "${env.channel}", message: "[${STUDENT}] [${JOB_NAME}] [${BUILD_TAG}] Ejecucion Exitosa", teamDomain: 'devopsusach20-lzc3526', tokenCredentialId: 'slack-angelo-channel'
+					slackSend color: 'good', channel: "${env.channel}", message: "[${STUDENT}] [${JOB_NAME}] [${STAGE}] Ejecucion Exitosa", teamDomain: 'devopsusach20-lzc3526', tokenCredentialId: 'slack-angelo-channel'
 				}
 				failure{
-					slackSend color: 'danger',channel: "${env.channel}", message: "[${STUDENT}] [${env.JOB_NAME}] [${BUILD_TAG}] Ejecucion fallida en stage [${env.STAGE}]", teamDomain: 'devopsusach20-lzc3526', tokenCredentialId: 'slack-angelo-channel'
+					slackSend color: 'danger',channel: "${env.channel}", message: "[${STUDENT}] [${env.JOB_NAME}] [${STAGE}] Ejecucion fallida en stage [${env.STAGE}]", teamDomain: 'devopsusach20-lzc3526', tokenCredentialId: 'slack-angelo-channel'
 				}
         }
     }
