@@ -6,7 +6,7 @@ def jsonParse(def json) {
 pipeline {
     agent any
     environment {
-        channel='C04BPL2A5E3'
+        channel='D044QHWTS23'
         NEXUS_PASSWORD     = credentials('nexus-password')
     }
     stages {
@@ -22,6 +22,13 @@ pipeline {
                             userRemoteConfigs: [[url: 'https://github.com/aortizy/ejemplo-maven.git']]])
                 }
             }
+            post{
+				success{
+					slackSend color: 'good', channel: "${env.channel}", message: "[Mentor Devops] [${JOB_NAME}] [${BUILD_TAG}] Ejecucion Exitosa", teamDomain: 'devopsusach20-lzc3526', tokenCredentialId: 'token-slack'
+				}
+				failure{
+					slackSend color: 'danger',channel: "${env.channel}", message: "[Mentor Devops] [${env.JOB_NAME}] [${BUILD_TAG}] Ejecucion fallida en stage [${env.STAGE}]", teamDomain: 'devopsusach20-lzc3526', tokenCredentialId: 'token-slack'
+				}
         }
      
         stage("Paso 1: Build && Test"){
