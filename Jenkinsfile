@@ -15,6 +15,7 @@ pipeline {
         stage("Paso 0: Download Code and checkout"){
             steps {
                 script{
+                    env.STAGE='Paso 0: Download Code and checkout'
                     checkout(
                             [$class: 'GitSCM',
                             //Acá reemplazar por el nonbre de branch
