@@ -21,7 +21,7 @@ pipeline {
                             //Acá reemplazar por el nonbre de branch
                             branches: [[name: "feature/sonar" ]],
                             //Acá reemplazar por su propio repositorio
-                            userRemoteConfigs: [[url: 'https://github.com/aortizy/ejemplo-maven.git']]])
+                            userRemoteConfigs: [[url: 'https://github.com/aortizy/ejemplo-mavene.git']]])
                 }
             }
             post{
