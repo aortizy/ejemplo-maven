@@ -7,6 +7,7 @@ pipeline {
     agent any
     environment {
         channel='D044QHWTS23'
+        STUDENT='Jhonatan Ortiz'
         NEXUS_PASSWORD     = credentials('nexus-password')
     }
     stages {
@@ -24,10 +25,10 @@ pipeline {
             }
             post{
 				success{
-					slackSend color: 'good', channel: "${env.channel}", message: "[Mentor Devops] [${JOB_NAME}] [${BUILD_TAG}] Ejecucion Exitosa", teamDomain: 'devopsusach20-lzc3526', tokenCredentialId: 'slack-angelo-channel'
+					slackSend color: 'good', channel: "${env.channel}", message: "[${STUDENT}] [${JOB_NAME}] [${BUILD_TAG}] Ejecucion Exitosa", teamDomain: 'devopsusach20-lzc3526', tokenCredentialId: 'slack-angelo-channel'
 				}
 				failure{
-					slackSend color: 'danger',channel: "${env.channel}", message: "[Mentor Devops] [${env.JOB_NAME}] [${BUILD_TAG}] Ejecucion fallida en stage [${env.STAGE}]", teamDomain: 'devopsusach20-lzc3526', tokenCredentialId: 'slack-angelo-channel'
+					slackSend color: 'danger',channel: "${env.channel}", message: "[${STUDENT}] [${env.JOB_NAME}] [${BUILD_TAG}] Ejecucion fallida en stage [${env.STAGE}]", teamDomain: 'devopsusach20-lzc3526', tokenCredentialId: 'slack-angelo-channel'
 				}
         }
     }
