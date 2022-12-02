@@ -71,7 +71,7 @@ pipeline {
                 script{
                     sh "echo 'Análisis con newman!'"
                     sh "ls -lh"
-                    echo "v-$BUILD_TAG"
+                    sh "echo v-$BUILD_TAG"
                     sh 'newman run ejemplo-maven.postman_collection.json'
                         }                        
                 }
