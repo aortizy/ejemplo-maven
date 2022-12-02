@@ -14,7 +14,7 @@
 					"script": {
 						"exec": [
 							"pm.test(\"Status code is 200\", function () {",
-							"    pm.expect(pm.response).should.have.code(200);",
+							"    pm.expect(pm.response).to.have.code(200);",
 							"});",
 							"",
 							"pm.test(\"Response time is less than 3000ms\", function () {",
@@ -58,7 +58,7 @@
 					"script": {
 						"exec": [
 							"pm.test(\"Status code is 200\", function () {",
-							"    pm.expect(pm.response).should.have.code(200);",
+							"    pm.expect(pm.response).to.have.code(200);",
 							"});",
 							"pm.test(\"Mensaje == ok\", function () {",
 							"    var jsonData = pm.response.json();",
@@ -66,16 +66,7 @@
 							"});"
 						],
 						"type": "text/javascript"
-					}
-				},
-				{
-					"listen": "prerequest",
-					"script": {
-						"exec": [
-							""
-						],
-						"type": "text/javascript"
-					}
+					} 
 				}
 			],
 			"request": {
@@ -111,7 +102,7 @@
 					"script": {
 						"exec": [
 							"pm.test(\"Status code is 200\", function () {",
-							"    pm.expect(pm.response).should.have.code(200);",
+							"    pm.expect(pm.response).to.have.code(200);",
 							"});",
 							"",
 							"pm.test(\"Response time is less than 3000ms\", function () {",
@@ -161,7 +152,7 @@
 					"script": {
 						"exec": [
 							"pm.test(\"Status code is 200\", function () {",
-							"    pm.expect(pm.response).should.have.code(200);",
+							"    pm.expect(pm.response).to.have.code(200);",
 							"});",
 							"",
 							"pm.test(\"Response time is less than 3000ms\", function () {",
