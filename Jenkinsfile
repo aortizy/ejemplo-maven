@@ -65,7 +65,6 @@ pipeline {
                         }                        
                 }
             }
-        }
         
         stage("Paso 3: Curl Springboot maven sleep 20"){
             steps {
