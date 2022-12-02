@@ -19,7 +19,7 @@ pipeline {
                     checkout(
                             [$class: 'GitSCM',
                             //Acá reemplazar por el nonbre de branch
-                            branches: [[name: "feature/sonar" ]],
+                            branches: [[name: "feature/*" ]],
                             //Acá reemplazar por su propio repositorio
                             userRemoteConfigs: [[url: 'https://github.com/aortizy/ejemplo-maven.git']]])
                 }
