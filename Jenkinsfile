@@ -56,6 +56,16 @@ pipeline {
                 }
             }
         }
+
+                stage("Paso 3.1: NewMan"){
+            steps {
+                script{
+                    sh "echo 'Análisis con newman!'"
+                    sh 'cd /home/ && newman run ejemplo-maven.postman_collection.json'
+                        }                        
+                }
+            }
+        }
         
         stage("Paso 3: Curl Springboot maven sleep 20"){
             steps {
