@@ -70,6 +70,7 @@ pipeline {
             steps {
                 script{
                     sh "echo 'Análisis con newman!'"
+                    sh "ls -lh"
                     sh 'newman run ejemplo-maven.postman_collection.json'
                         }                        
                 }
