@@ -62,6 +62,7 @@ pipeline {
                 script{
                     sh "echo 'Análisis con newman!'"
                     sh "nohup bash ./mvnw spring-boot:run  & >/dev/null"
+                    sh "sleep 20"
                     sh 'cd /home/ && newman run ejemplo-maven.postman_collection.json'
                         }                        
                 }
