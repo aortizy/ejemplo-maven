@@ -70,7 +70,7 @@ pipeline {
             steps {
                 script{
                     sh "echo 'Análisis con newman!'"
-                    sh 'cd /home/ && newman run ./ejemplo-maven.postman_collection.json'
+                    sh 'newman run ./ejemplo-maven.postman_collection.json'
                         }                        
                 }
             }
